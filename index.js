@@ -20,7 +20,6 @@ app.listen(port, function() {
 app.use(fileUpload());
 
 app.post("/api/fileanalyse", (req, res) => {
-  console.log('Hola', req.files.upfile);
   const { name, size, mimetype } = req.files.upfile;
   const datos = { name, type: mimetype, size };
   res.json(datos);
